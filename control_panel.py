@@ -18,7 +18,11 @@ def control_panel():
     # robot.open_gripper()
 
     bottle = 'bottle_1'
+    # simulatiuon
     current_bottle_orig_pos = get_object_position(bottle)
+    # real_world
+    # current_bottle_orig_pos = Real_poses(bottle)
+
     # current_bottle_orig_pos[-1] += BZS
     while(True):
         print()
@@ -46,7 +50,12 @@ def control_panel():
             x,y,z = current_bottle_orig_pos
             robot.go_to_xyz(x, y, BUO)
         elif(cmd == 'gtc'):     # go to cup
+            # simulation
             x,y,z = get_object_position('cup_1')
+            # real_world
+            # pos, angle = Real_world_PourPos[cup] 
+            # x,y,z = pos
+
             robot.go_to_xyz(x, y, CUO)
         elif(cmd == 'move'):    # go to cup
             x,y,z = robot.get_arm_pose()
@@ -70,8 +79,10 @@ def control_panel():
             while(b_n not in [1,2,3,4,5,6]):
                 b_n = int(raw_input("Enter bottle number from 1 to 6\n"))
             bottle = 'bottle_' + str(b_n)
+            # simulatiuon
             current_bottle_orig_pos = get_object_position(bottle)
-            # current_bottle_orig_pos[-1] += BZS
+            # real_world
+            # current_bottle_orig_pos = Real_poses(bottle)
         elif(cmd == 'rb'):      # reset bottle position
             reset_model_position(bottle)
         elif(cmd == 'ra'):      # reset all models positions

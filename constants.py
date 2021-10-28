@@ -28,17 +28,45 @@ BottleToDrink = {
 
 }
 
+# no wall positions
+# Poses = {
+#     "bottle_1" : Pose(position=Point(x=0.5, y=-1, z=0), orientation=Quaternion(x=0, y=0, z=0.3826834, w=0.9238795 )),    # red
+#     "bottle_2" : Pose(position=Point(x=0, y=-1, z=0),   orientation=Quaternion(x=0, y=0, z=0.3826834, w=0.9238795 )),      # blue
+#     "bottle_3" : Pose(position=Point(x=-0.5, y=-1, z=0), orientation=Quaternion(x=0, y=0, z=0, w=1 )),   # green
+#     "bottle_4" : Pose(position=Point(x=0.5, y=1, z=0),  orientation=Quaternion(x=0, y=0, z=0, w=1 )),     # orange
+#     "bottle_5" : Pose(position=Point(x=0, y=1, z=0),    orientation=Quaternion(x=0, y=0, z=0.3826834, w=0.9238795 )),       # pink
+#     "bottle_6" : Pose(position=Point(x=-0.5, y=1, z=0), orientation=Quaternion(x=0, y=0, z=0, w=1 )),    # yellow
+
+#     "cup_1" : Pose(position=Point(x=1, y=0.5, z=0)),        # red
+#     "cup_2" : Pose(position=Point(x=1, y=0, z=0)),          # green
+#     "cup_3" : Pose(position=Point(x=1, y=-0.5, z=0))        # blue
+# }
+
+# with wall positions
 Poses = {
-    "bottle_1" : Pose(position=Point(x=0.5, y=-1, z=0), orientation=Quaternion(x=0, y=0, z=0.3826834, w=0.9238795 )),    # red
-    "bottle_2" : Pose(position=Point(x=0, y=-1, z=0),   orientation=Quaternion(x=0, y=0, z=0.3826834, w=0.9238795 )),      # blue
-    "bottle_3" : Pose(position=Point(x=-0.5, y=-1, z=0), orientation=Quaternion(x=0, y=0, z=0, w=1 )),   # green
-    "bottle_4" : Pose(position=Point(x=0.5, y=1, z=0),  orientation=Quaternion(x=0, y=0, z=0, w=1 )),     # orange
-    "bottle_5" : Pose(position=Point(x=0, y=1, z=0),    orientation=Quaternion(x=0, y=0, z=0.3826834, w=0.9238795 )),       # pink
-    "bottle_6" : Pose(position=Point(x=-0.5, y=1, z=0), orientation=Quaternion(x=0, y=0, z=0, w=1 )),    # yellow
+    "bottle_1" : Pose(position=Point(x=0.8, y=-1, z=0), orientation=Quaternion(x=0, y=0, z=0.3826834, w=0.9238795 )),    # red
+    "bottle_2" : Pose(position=Point(x=0.4, y=-1, z=0),   orientation=Quaternion(x=0, y=0, z=0.3826834, w=0.9238795 )),      # blue
+    "bottle_3" : Pose(position=Point(x=0, y=-1, z=0), orientation=Quaternion(x=0, y=0, z=0, w=1 )),   # green
+    "bottle_4" : Pose(position=Point(x=0.8, y=1, z=0),  orientation=Quaternion(x=0, y=0, z=0, w=1 )),     # orange
+    "bottle_5" : Pose(position=Point(x=0.4, y=1, z=0),    orientation=Quaternion(x=0, y=0, z=0.3826834, w=0.9238795 )),       # pink
+    "bottle_6" : Pose(position=Point(x=0, y=1, z=0), orientation=Quaternion(x=0, y=0, z=0, w=1 )),    # yellow
 
     "cup_1" : Pose(position=Point(x=1, y=0.5, z=0)),        # red
     "cup_2" : Pose(position=Point(x=1, y=0, z=0)),          # green
     "cup_3" : Pose(position=Point(x=1, y=-0.5, z=0))        # blue
+}
+
+Real_poses = {
+    "bottle_1" : [0, 0, 0.17],  # red
+    "bottle_2" : [0,0,0.17]  ,  # blue
+    "bottle_3" : [],
+    "bottle_4" : [],
+    "bottle_5" : [],
+    "bottle_6" : [],
+
+    "cup_1" : [],
+    "cup_2" : [],
+    "cup_3" : []
 }
 
 Colors = {
@@ -69,6 +97,12 @@ Names = {
 }
 
 PourPos = {
+    "cup_1": [[1, 0, 0], -1],
+    "cup_2": [[1, 0.5, 0], 1],
+    "cup_3": [[1, 0, 0], 1]
+}
+
+Real_world_PourPos = {
     "cup_1": [[1, 0, 0], -1],
     "cup_2": [[1, 0.5, 0], 1],
     "cup_3": [[1, 0, 0], 1]
