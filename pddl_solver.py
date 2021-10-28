@@ -12,7 +12,7 @@ def coctails_enter():
             problem_file.write(line)
     pr_b.close()
     print('Enter name of the cocktails that you want to be prepared')
-    print('Coctails options: RandS VandJ WandJ RVAJ')
+    print('Coctails options: RandS VandJ WandJ RVAJ RVAJSW RASW WAJ')
     cs = raw_input()
     if(cs==""):
         cs = 'RandS RVAJ WandJ'
@@ -21,9 +21,12 @@ def coctails_enter():
         print('RandS RVAJ WandJ')
         cs = raw_input()
     one, two, three = cs.split()
-    problem_file.write('    (order one ' + one + ' cup1)\n')
-    problem_file.write('    (order two ' + two + ' cup2)\n')
-    problem_file.write('    (order three ' + three + ' cup3)\n')
+    # (order RASW cup1)
+    # (order RVAJSW cup2)
+    # (order WAJ cup3)
+    problem_file.write('    (order ' + one + ' cup1)\n')
+    problem_file.write('    (order ' + two + ' cup2)\n')
+    problem_file.write('    (order ' + three + ' cup3)\n')
     with open(pddl_folder_path + 'pddl_components/problem_ending.txt') as pr_e:
         for line in pr_e:
             problem_file.write(line)
@@ -46,7 +49,7 @@ def solver():
             t = t.replace('cup2', 'cup_2')
             t = t.replace('cup3', 'cup_3')
             f.write(t + '\n')
-    print('Solution stored in pddl/plan.ipc file')
+    print('Solution stored in pddl2/plan.ipc file')
 
 def plan_to_actions():
    file = open(pddl_folder_path + 'plan.ipc', 'r')
@@ -57,7 +60,7 @@ def plan_to_actions():
        robot_action['action'] = curr_action[0]
        if(curr_action[0] == "grab"):
            robot_action['bottle'] = curr_action[2]
-       elif(curr_action[0] == "pour2"):
+       elif(curr_action[0] == "pour"):
            robot_action['bottle'] = curr_action[2]
            robot_action['cup'] = curr_action[3]
        elif(curr_action[0] == "release"):
@@ -76,3 +79,6 @@ if __name__ == '__main__':
     start = time.time()
     solver()
     print('Solution time:', time.time() - start, "seconds")
+    plan = plan_to_actions()
+    for step in plan:
+        print(step)

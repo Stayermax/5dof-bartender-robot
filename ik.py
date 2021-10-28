@@ -243,10 +243,12 @@ class MoveGroupPythonIntefaceTutorial(object):
             return -1
         else:
             self.current_bottle = bottle
+            # simulation
             self.current_bottle_orig_pos = get_object_position(bottle)
             self.current_bottle_orig_pos[-1] = BZP
-            # print("Current bottle: " + self.current_bottle)
-            # print("Current bottle initial position: " + str(self.current_bottle_orig_pos))
+            # real_world
+            # self.current_bottle_orig_pos = Real_poses(bottle)
+
             x,y,z = self.current_bottle_orig_pos
             self.open_gripper()
             self.go_to_xyz(x*SDC, y*SDC, BUO) 
@@ -254,7 +256,7 @@ class MoveGroupPythonIntefaceTutorial(object):
             self.go_to_xyz(x, y, BZP)
             self.close_gripper()
             # self.attach_box(bottle)
-            self.go_to_xyz(x, y, BUO)
+            # self.go_to_xyz(x, y, BUO)
             self.go_to_xyz(x*SDC, y*SDC, BUO)
             return 1
 
@@ -268,10 +270,13 @@ class MoveGroupPythonIntefaceTutorial(object):
             print("Arm doesn't holding anything, nothing to pour")
             return -1
         else:
-            cup_pos = get_object_position(cup)
+            
+            # simulation
             pos, angle = PourPos[cup] 
+            # real_world
+            # pos, angle = Real_world_PourPos[cup] 
             x, y, z = pos
-
+ 
             self.go_to_xyz(x, y, CUO)
             self.rotate_gripper(angle = angle)
             rospy.sleep(1)
@@ -292,13 +297,13 @@ class MoveGroupPythonIntefaceTutorial(object):
 
             x, y, z = self.current_bottle_orig_pos
             self.go_to_xyz(x*SDC, y*SDC, BUO)
-            self.go_to_xyz(x, y, BUO)
+            # self.go_to_xyz(x, y, BUO)
             self.go_to_xyz(x, y, z)
             self.open_gripper()
             # reset_model_position(self.current_bottle)
-            self.open_gripper()
+            # self.open_gripper()
             # self.go_to_xyz(x, y, BUO)
-            self.go_to_xyz(x*DSDC, y*DSDC, BUO)
+            # self.go_to_xyz(x*DSDC, y*DSDC, BUO)
             self.go_to_xyz(x*SDC, y*SDC, BUO)
 
             self.current_bottle = None

@@ -18,9 +18,9 @@ def main(new_plan = True):
 
     # 1) Initiate robot
     robot = ik.MoveGroupPythonIntefaceTutorial()
+    robot.open_gripper()
     robot.go_to_init_state()
     reset_all()
-    robot.open_gripper()
     print(CRED + "ROBOT INITIATED" + CEND)
     print("\n==========================================\n")
 
@@ -41,7 +41,7 @@ def main(new_plan = True):
         if (step['action'] == "grab"):
             print(CRED + "Grabbing bottle with " + BottleToDrink[step['bottle']] + CEND)
             robot.grab(step['bottle'])
-        elif (step['action'] == "pour2"):
+        elif (step['action'] == "pour"):
             print(CRED + "Pouring " + BottleToDrink[step['bottle']]+ " to " + step['cup'] + CEND)
             robot.pour(step['cup'])
         elif (step['action'] == "release"):
