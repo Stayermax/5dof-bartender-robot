@@ -56,7 +56,8 @@
     (recipe whiskey WAJ)
     (recipe absinthe WAJ)
     (recipe juice WAJ)
-        (order RVAJ cup1)
+    
+    (order RVAJ cup1)
     (order RASW cup2)
     (order WAJ cup3)
     )
