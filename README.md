@@ -9,4 +9,6 @@ Links to the simulation examples:
 * Run number 2: https://www.youtube.com/watch?v=w7F-geLTqZ4
 * Run number 3: https://www.youtube.com/watch?v=4krn4Fo6zSU
 
-Real robot video: https://www.youtube.com/watch?v=WSWCvtBugL4
+Real robot videos:
+* Run number 1: https://www.youtube.com/watch?v=2sgOBlgd5fw
+* Run number 2: https://www.youtube.com/watch?v=WSWCvtBugL4
