@@ -3,6 +3,8 @@
 
 This simulation is the final project for the course Cognitive Robotics 097244 in Technion university.
 
+Project report: https://github.com/Stayermax/5dof-bartender-robot/blob/main/Project%20report.pdf
+
 Links to the simulation examples:
 
 * Run number 1: https://www.youtube.com/watch?v=jRZz_rf-XLs
